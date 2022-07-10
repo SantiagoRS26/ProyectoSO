@@ -1,5 +1,5 @@
 <?php
-include './layout/header.php'
+include '../layout/header.php'
 ?>
 <main>
     
@@ -7,5 +7,5 @@ include './layout/header.php'
 
 </main>
 <?php
-include './layout/footer.php'
+include '../layout/footer.php'
 ?>
