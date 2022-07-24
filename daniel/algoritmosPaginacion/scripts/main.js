@@ -1,5 +1,5 @@
 let container = document.querySelector(".main-container");
-let numeroMarcos = 3;
+let numeroMarcos = 4;
 let referencias = [2, 3, 4, 1, 2, 3, 4, 7, 8, 2];
 
 let referenciasObjs = [
@@ -47,7 +47,7 @@ let referenciasObjs = [
 
 
 /*Funcion que genera la tabla*/
-function generarTabla() {
+function generarTablaOptimo() {
     let numeroFallos=0;
     let tableContainer = document.createElement("table");
     let headTable = document.createElement("thead");
@@ -103,7 +103,7 @@ function generarTabla() {
                     paginasActuales.push(referenciasObjs[i]);
                     for (let x = 0; x < paginasActuales.length; x++) {
                         let celda = document.querySelector(`.celda-${x}-${i + 1}`);
-                        let celdaFallos = document.querySelector(`.celda-3-${i + 1}`);
+                        let celdaFallos = document.querySelector(`.celda-${numeroMarcos}-${i + 1}`);
                         celdaFallos.textContent="X"
                         celda.textContent = paginasActuales[x].numeroReferencia;
                         
@@ -139,7 +139,7 @@ function generarTabla() {
                         for (let x = 0; x < paginasActuales.length; x++) {
                             let celda = document.querySelector(`.celda-${x}-${i + 1}`);
                             celda.textContent = paginasActuales[x].numeroReferencia;
-                            let celdaFallos = document.querySelector(`.celda-3-${i + 1}`);
+                            let celdaFallos = document.querySelector(`.celda-${numeroMarcos}-${i + 1}`);
                             celdaFallos.textContent="X"
                             
                         }
@@ -161,7 +161,7 @@ function generarTabla() {
                         for (let x = 0; x < paginasActuales.length; x++) {
                             let celda = document.querySelector(`.celda-${x}-${i + 1}`);
                             celda.textContent = paginasActuales[x].numeroReferencia;
-                            let celdaFallos = document.querySelector(`.celda-3-${i + 1}`);
+                            let celdaFallos = document.querySelector(`.celda-${numeroMarcos}-${i + 1}`);
                             celdaFallos.textContent="X"
                             
                         }
@@ -178,7 +178,7 @@ function generarTabla() {
                 for (let x = 0; x < paginasActuales.length; x++) {
                     let celda = document.querySelector(`.celda-${x}-${i + 1}`);
                     celda.textContent = paginasActuales[x].numeroReferencia;
-                    let celdaFallos = document.querySelector(`.celda-3-${i + 1}`);
+                    let celdaFallos = document.querySelector(`.celda-${numeroMarcos}-${i + 1}`);
                     celdaFallos.textContent="V"
                 }
                 paginasActuales.forEach(element => {
@@ -200,5 +200,4 @@ function generarTabla() {
     container.appendChild(indicador1);
     container.appendChild(rendimiento);
 }
-generarTabla();
-
+generarTablaOptimo();
